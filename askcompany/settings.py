@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # third apps
     'django_extensions',
     'debug_toolbar',
+    'bootstrap4',
     # local apps
     'instagram',
     'accounts',
@@ -62,7 +63,12 @@ ROOT_URLCONF = 'askcompany.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # 기본적으로는 앱이름/templates/앱이름/ 안에 .html 파일을 위치한다.
+
+            # File System Template Loader
+            BASE_DIR / 'askcompany' / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

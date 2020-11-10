@@ -1,2 +1,5 @@
 django
 pillow
+django-debug-toolbar
+django-extensions
+django-bootstratp4

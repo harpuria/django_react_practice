@@ -22,14 +22,17 @@ from django.conf import settings
 # 정적 파일에 접근하려면...
 from django.conf.urls.static import static
 
+from django.views.generic import TemplateView, RedirectView
+
 import debug_toolbar
 
 urlpatterns = [
+    #path('', TemplateView.as_view(template_name='root.html'), name='root'), # 템플릿 뷰를 이용하여 기본 루트 페이지 처리
+    path('', RedirectView.as_view(url='/instagram', pattern_name='instagram:post_list'), name='root'), # 리다이렉트 뷰를 이용하여 처리
     path('admin/', admin.site.urls),
     path('__debug__', include(debug_toolbar.urls)),
     path('instagram/', include('instagram.urls')),
     path('accounts/', include('accounts.urls')),
-
 ]
 
 # settings 에서 DEBUG 가 True 일 경우 (안써도 되긴 함. 명시적으로 쓰기 위한것.)

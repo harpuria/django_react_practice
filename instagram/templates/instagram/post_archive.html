@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>latest</h2>
+    {{ latest }}
+
+    <h2>date_list</h2>
+    {{ date_list }}
+
+    {% for date in date_list %}
+        {{ date|date:"Y" }}
+        {{ date.year }}
+    {% endfor %}
+</body>
+</html>
