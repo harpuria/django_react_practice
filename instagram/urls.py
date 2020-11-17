@@ -17,8 +17,9 @@ class YearConverter:
 register_converter(YearConverter, 'year')
 
 urlpatterns = [
+    path('new/', views.post_new, name='post_new'),
     path('', views.post_list, name='post_list'),
-    path('<int:pk>', views.post_detail), # pk 는 int 값으로 전달
+    path('<int:pk>', views.post_detail, name='post_detail'), # pk 는 int 값으로 전달
     #path('archives/<int:year>', views.archives_year),
     #re_path(r'archives/(?P<year>20\d{2})', views.archives_year), # r'URL_PATTERN_STR/(?P<URL_PATTERN_STR>정규표현식)
     #path('archives/<year:year>', views.archives_year), # Custom Path Converter 이용

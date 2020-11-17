@@ -1,0 +1,8 @@
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- 장고 폼에서 기본적으로 폼을 구성할 때는 tr, th 로 꾸며주기 때문에 기본 폼 구성때는 table 로 감싸준다 -->
+    <table>
+        {{ form }} <!-- form 만 두어도 기본적으로 .as_table 이 호출되어 폼을 꾸며준다. -->
+    </table>
+    <input type="submit" value="저장">
+</form>

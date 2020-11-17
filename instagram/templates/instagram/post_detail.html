@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "instagram/layout.html" %}
+{% block title %}
+    INSTAGRAM / DETAIL
+{% endblock title %}
+
+{% block content %}
     {{post.author}}
     {% if post.photo %}    
         <div>
@@ -13,5 +11,5 @@
         </div>
     {% endif %}
     {{post.message}}
-</body>
-</html>
+    <a href="{% url 'instagram:post_list' %}" class="btn btn-primary">목록</a>
+{% endblock content %}

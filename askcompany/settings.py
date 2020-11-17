@@ -25,7 +25,10 @@ SECRET_KEY = 'ps2*^wyxy=)9qkejkuv%83l3ey9w^o%%i4gunp00pf9d5fl68^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'de100bc31126.ngrok.io',
+    '*',
+]
 
 
 # Application definition
@@ -132,7 +135,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = '' # TODO
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / 'askcompany' / 'static'
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'mdeia'
